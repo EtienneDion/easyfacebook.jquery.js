@@ -1,0 +1,71 @@
+.friend_autocomplete input, textarea {
+	position:relative;
+	display:block;
+	width:326px;
+	padding:3px;
+	margin:0 auto 20px;
+	border:1px solid #aaa;
+}
+.friend_autocomplete span {
+	display: block;
+	width: auto;
+	margin: 0 3px 3px 0;
+	padding: 1px 20px 2px 8px;
+	position: relative;
+	float: left;
+	text-indent: 0;
+	background-color: #EEE;
+	border: 1px solid #48719E;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	color: #333;
+	font: normal 11px Verdana, Sans-serif;
+}
+/* AUTO-COMPLETE FIELDS */
+.auto_complete {
+	padding:3px 3px 0;
+	margin:0 auto;
+	border: 1px solid #48719E;
+	float: left;
+	height: 22px;
+	margin-bottom: 6px;
+	width: 200px;
+	background-color:#fff;
+	cursor:text;
+}
+.auto_complete span a {
+	position: absolute;
+	right: 8px;
+	top: 0px;
+	color: #666;
+	font: bold 12px Verdana, Sans-serif;
+	text-decoration: none;
+}
+.auto_complete span a:hover {
+	color:#ff0000;
+}
+/* MENU ITEMS */
+.ui-menu-item {
+	position:relative;
+	display:block;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width:200px;
+	border:1px solid #CCC;
+	background-color:#FFF;
+}
+.ui-menu-item a {
+	color:#666;
+	font-family:Arial, Helvetica, sans-serif;
+	cursor:pointer;
+}
+.ui-menu-item a:hover {
+	color:#000;
+}
+.ui-helper-clearfix input {
+	position:relative;
+	width:200px;
+	margin-left:-5px;
+}

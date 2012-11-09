@@ -1,0 +1,883 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Facebook Tutoriel</title>
+		
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"></script>
+
+		<style type="text/css">
+            .box{
+                margin: 5px;
+                border: 1px solid #60729b;
+                padding: 5px;
+                width: 510px;
+                height: 200px;
+                overflow:auto;
+                background-color: #e6ebf8;
+                float:none;
+                display:block;
+            }
+			
+			
+			/* Wall and comment */
+			
+			.facebook_feed{
+				width:100%;
+				position:relative;
+				left:0;
+				margin:0;
+				padding::0;
+				border:1px solid #333333;
+				font-size: 11px;
+				font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+				width:490px;
+				overflow-x:hidden;
+			}
+			.facebook_feed ul{
+				position:relative;
+				left:0;
+				margin:0;
+				padding:0;
+				list-style:none;
+			}
+			.facebook_feed ul li{
+				position:relative;
+				left:0;
+				margin:0;
+				padding:15px; 
+				border-bottom:1px solid #333333;
+			}
+			.facebook_feed ul li li{
+				border-bottom:0px none #333333;
+				padding:0px; 
+				
+			}
+			.facebook_feed ul li.even{
+				background:#bbb;
+			}
+			.facebook_feed ul li.odd{
+				background:#999;
+			}
+			.facebook_feed ul li .txt {
+				position:relative;
+				display:block;
+				min-height:60px;
+			}
+			.facebook_feed ul li .txt a.fb_username{
+				color: #3B5998;
+				padding-left:60px;
+				text-decoration:none;
+				font-weight: bold;
+				width:100%;
+				height:50px;
+				position:absolute;
+			}
+			.facebook_feed ul li .txt p.fb_message{
+				margin-left:60px;
+				position:relative;
+				
+			}
+			.facebook_feed ul li .txt span.fb_title{
+				position:relative;
+				padding-bottom:10px;
+				position:relative;
+				display:block;
+				padding-bottom:5px;
+			}
+			.facebook_feed ul li .txt p.fb_message span.img {
+				width:100px;
+				display:block;
+				position:absolute;
+				padding-top:20px;
+			}
+			.facebook_feed ul li .txt p.fb_message span.msg{
+				margin-left:0px;
+				padding-top:20px;
+				display:block;
+			}
+			.facebook_feed ul li .txt p.fb_message.img span.msg{
+				margin-left:110px;
+				display:block;
+			}
+			.facebook_feed ul li .txt p.fb_message span.img span.date {
+				display:none;
+			
+			}
+			.facebook_feed ul li .comment_box{
+			 	display: block;
+				margin-bottom: 5px;
+				margin-left: 60px;
+				margin-right: 10px;
+				margin-top: 5px;
+				padding:2px;
+				position: relative;
+			}
+			.facebook_feed ul li .comment_box li a{
+				padding-left:60px;
+				position:absolute;
+				height:50px;
+				
+			}
+			.facebook_feed ul li .comment_box li p{
+				padding-left:60px;
+				padding-top:15px;
+				position:relative;
+				
+			}
+			
+			.facebook_feed ul li .comment_box li a.like_comment{
+				padding-left:0px;
+			}
+			.facebook_feed ul li .comment_box .time{
+				padding-left:60px;
+				position:relative;
+				
+			}
+			.facebook_feed ul li .comment_box .comment{
+				padding:2px;
+				display:block;
+				width:100%;
+				margin-top: 10px;
+			}
+			.facebook_feed ul li .comment_box .like_comment{
+				height:auto;
+				position:relative;
+			}
+			
+			.facebook_feed .count{
+				background-repeat: no-repeat;
+				background-image: url("http://static.ak.fbcdn.net/rsrc.php/v1/zC/r/U3delFucOiF.png");
+				background-position: -12px -146px;
+				height: 9px;
+				padding-left:13px;
+			}
+			
+        </style>
+   	
+    </head>
+	<body>
+	
+	<div id="fb-root"></div>
+	
+	<p>
+        <fb:login-button autologoutlink="true" perms="email,user_birthday,status_update,publish_stream"></fb:login-button>
+    </p>
+	
+	<h2>Comment box from url</h2>
+    <div class="box" style="height:600px;"><div id="comment_box"><a href="#" id="perms_request">Permission request (if not grant yet)</a><br /><br /></div></div>
+	<h2>Wall of post from page</h2>
+    <div class="box" style="height:600px;"><div id="wall"><a href="#" id="perms_request">Permission request (if not grant yet)</a><br /><br /></div></div>
+	
+	<script type="text/javascript">
+		
+		
+	/*
+	* jQuery Facebook comments tool
+	* Copyright (c) 2011  (http://www.etiennedion.com/)
+	*
+	*/
+	
+	
+	//PHP var to JS
+			
+	var width = 520; 
+	var height = 1000;
+	var uid = '';
+	var mobile = 0;
+	var api_key = '0';
+	var base_url = "/";
+	var GA_Account = 0;
+	var tracking_prefix ='undefined';
+	var like = false;
+	var user;
+	var friends=0;
+	
+		
+		
+	function login(){
+		//document.location.href = base_url;
+	}
+	function logout(){
+		//document.location.href = base_url;
+	}
+	
+	 
+	
+		
+
+	(function($){
+		
+		$.fb= {};
+		var fbdefaults = [];
+		var access_token;
+		
+		
+		
+		fbdefaults['InitSettings'] = {
+								 api_key: '152367548159504',
+								 FB_lang: 'en_US',
+								 perms:'',
+								 get_friends:'0',  // => var friends = array of friends;
+								 get_user:'0',  // required for create event and acces to user data
+								 access_token_required:'1',
+								 GA_Account: 'UA-9999999-9',
+								 tracking_prefix:'demo',
+								 base_url: '/'
+								 
+								
+		};
+		
+		fbdefaults['ShowWallSettings'] = {
+								 nb: 10,
+								 feed: null,
+								 loading_message: "Chargement du mur ...",
+								 timeout:'0'
+		};
+		
+		
+		var methods = {
+			//test : function () { alert('test'); },
+				fbinit : function ( options ) {  
+					
+								var defaults = fbdefaults['InitSettings'];
+								options = $.extend(defaults, options);
+								
+								base_url = options.base_url;
+								api_key = options.api_key;
+								 
+								(function() {
+									var e = document.createElement('script'); e.async = true;
+									e.src = document.location.protocol +
+									  '//connect.facebook.net/'+options.FB_lang+'/all.js';
+									document.getElementById('fb-root').appendChild(e);
+								}());
+								  
+								
+								if(/iPhone|iPod|Android|opera mini|blackberry|palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|iris|3g_t|windows ce|opera mobi|windows ce; smartphone;|windows ce; iemobile/i.test(navigator.userAgent)){
+									mobile = 1;
+									$(this).facebook_tracking({lid: 'mobile_broswer'});
+									$(this).output_log({log: 'mobile_broswer'});
+								} else {
+									$(this).facebook_tracking({lid: 'normal_broswer'});
+									$(this).output_log({log: 'normal_broswer'});
+								}
+								
+			  
+								if (options.GA_Account !== 'UA-9999999-9'){
+									 GA_Account =1;
+									 tracking_prefix = options.tracking_prefix;
+									 var _gaq = _gaq || [];
+									 _gaq.push(['_setAccount', options.GA_Account]);
+									 _gaq.push(['_trackPageview']);
+								
+									(function() {
+										var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+										ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+										var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+									}());
+									
+									
+									$(this).output_log({log: 'Google Analytics initiated'});
+								}
+								
+								if(api_key !== '0'){
+								
+									//FACEBOOK INIT
+									window.fbAsyncInit = function() {
+																
+																	FB.init({
+																		appId: api_key, 
+																		status: true, 
+																		//session : <?php echo json_encode($session); ?>, // don't refetch the session when PHP already has it
+																		cookie: true, 
+																		xfbml: true
+																	});
+																	
+																	
+																	
+																	
+																	$(this).output_log({log: 'facebook initiated'});
+																	
+																	
+																	// All the events registered 
+																	FB.Event.subscribe('auth.login', function(response) {
+																		// do something with response
+																		$(this).output_log({log: 'user logged in'});
+																		window.location.reload();
+																		
+																		//login();
+																	});
+																	FB.Event.subscribe('auth.logout', function(response) {
+																		// do something with response
+																		
+																		$(this).output_log({log: 'user logged out'});
+																		//logout();
+																	});
+																	
+																	//FB.Canvas.setSize({ width: width, height: height }); 
+																	
+																	if (options.auto_resize_tab === '1'){
+																		FB.Canvas.setAutoResize();
+																	}
+																	
+																	
+																	
+																	// this will fire when any of the like widgets are "liked" by the user
+																	FB.Event.subscribe('edge.create', function(href, widget) {
+																		$(this).facebook_tracking({lid: tracking_prefix +'/has_been_liked/'+href});
+																		
+																	});
+																	FB.Event.subscribe('edge.remove', function(href, widget) {
+																		$(this).facebook_tracking({lid: tracking_prefix +'/has_been_unliked/'+href});
+																		
+																	});
+													
+																	FB.Event.subscribe('message.send', function(href, widget) {
+																		$(this).facebook_tracking({lid: tracking_prefix +'/message.sended/'+href});
+																		
+																	});
+																	
+																	
+																	if (options.get_friends === '1' || options.get_user === '1' || options.access_token_required === '1'){
+																	
+																	
+																		FB.getLoginStatus(function(response) {
+																				 if (response.session) {
+																				 
+																					if (options.access_token_required === '1' ){
+																						 access_token = response.session.access_token;
+																						 
+																						 $(this).output_log({log: 'access_token ='+response.session.access_token});
+																						 $(this).output_log({log: 'user is logged in and granted some permissions.'});
+																						 
+																					 }
+																					 
+																					 
+																					 $(this).output_log({log: 'fbinit done'});
+																					 $('body').trigger('fbinit');
+																					 $(this).facebook_tracking({lid: tracking_prefix +'/app_loaded_correctly' });
+																					 
+																					 //Get my facebook user id
+																					 FB.api('/me', function(u) {
+																									if(u !== null && typeof(u.name) !== 'undefined') {
+																										  
+																										  if (options.get_user === '1'){
+																											  user = u;
+																											  $('body').trigger('user');
+																											  
+																											  $(this).output_log({log: 'user initiated'});
+																										  }
+																										  
+																										  if (options.get_friends === '1'){
+																											  user = u;
+																											  var getfriends = FB.Data.query("SELECT name, uid FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1={0}) ORDER BY name", parseInt(user.id));	
+																											  getfriends.wait(function(rows){
+																													friends = rows;
+																													$('body').trigger('friends');
+																													
+																													$(this).output_log({log: 'friends list collected'});
+																											  });
+																										  } 
+																										 
+																									
+																									}
+																					});
+																				} else {
+																					FB.login(function(response) {
+																						if (response.session) {
+																								
+																								if (options.access_token_required === '1' ){
+																									 access_token = response.session.access_token;
+																								
+																									 $(this).output_log({log: 'user is logged in and granted some permissions.'});
+																								}
+																								
+																								if (response.perms) {
+																										
+																										$(this).output_log({log: 'user is logged in and granted some permissions.'});
+																								} else { 
+																										$(this).output_log({log: 'user is logged in, but did not grant any permissions'});
+																										$(this).facebook_tracking({lid: tracking_prefix +'/app_loaded_correctly/user_did_not_grant_permission' });
+																								}
+																								
+																								$('body').trigger('fbinit');
+																								$(this).output_log({log: 'fbinit done'});
+																								
+																								FB.api('/me', function(u) {
+																									if(u !== null &&  typeof(u.name) !== 'undefined') {
+																										  
+																										  if (options.get_user === '1'){
+																											  user = u;
+																											  $('body').trigger('user');
+																										
+																											  $(this).output_log({log: 'user initiated'});
+																										  }
+																									  
+																										  if (options.get_friends === '1'){
+																											  user = u;
+																											  var getfriends = FB.Data.query("SELECT name, uid FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1={0}) ORDER BY name", parseInt(user.id));	
+																											  getfriends.wait(function(rows){
+																													friends = rows;
+																													$('body').trigger('friends');
+																													
+																													$(this).output_log({log: 'friends list collected'});
+																											  });
+																										  } 
+																										
+																									}
+																								});
+																						} else {
+																								// user is not logged in
+																								if (options.access_token_required === '1' ){
+																									// access_token = response.session.access_token;
+																								}
+																						
+																								$(this).output_log({log: 'user is not logged in : cant show user and friends'});
+																								$(this).output_log({log: 'fbinit done'});
+																								$('body').trigger('fbinit');
+																								$(this).facebook_tracking({lid: tracking_prefix +'/app_loaded_correctly/user_not_logged' });
+																								
+																						}
+																					}, {perms: options.perms});
+																				}
+																		});
+																	}	   
+																		   
+																		   
+														};
+								}
+																   
+								  
+							},
+							
+				//GET FACEBOOK WALL FEEDS --> Facebook API GRAPH BY JAVASCRIPT
+				show_wall : function (options) { 
+									var defaults = fbdefaults['ShowWallSettings'];
+									
+									options = $.extend(defaults, options);
+									var thiss = this;
+									var $this = $(this+'');
+									$this.attr('feed', options.feed);
+									$this.attr('nb', options.nb);
+									$this.attr('loading_message', options.loading_message);
+									$this.attr('timeout',options.timeout);
+									
+									
+											
+											
+											$this.addClass("facebook_feed");
+											
+											$this.append("<div class='loader'>"+options.loading_message+"</div>");
+											
+											if(options.feed != null){
+												var jonction = '?';
+												var comment_url = 0;
+												if (options.feed.indexOf("?") >=0){ 
+													jonction = '&';
+												} 
+												if (options.feed.indexOf("ids") >=0){
+													comment_url = 1;
+													
+													var vars = [], hash;
+													var hashes = options.feed.slice(options.feed.indexOf('?') + 1).split('&');
+													
+													hash = hashes[0].replace('ids=','');
+													console.log(hash);
+												} 
+												
+												var getUpdate = function() { 
+													var opt = [];
+													if(typeof($this.attr('feed')) != 'undefined'){
+														opt.feed = $this.attr('feed');
+														opt.nb = $this.attr('nb');
+														opt.loading_message = $this.attr('loading_message');
+														opt.timeout = $this.attr('timeout');
+													} 
+													
+													$.ajax({
+														url: opt.feed+"/"+jonction+"limit="+opt.nb+'&access_token='+access_token,
+														dataType: "jsonp",
+														success: function(feed)
+														{
+															var html = "<ul>";
+															var data = [];
+															
+															if (comment_url){
+																var html = "<ul><li><input class='comment' type='text' value='Écrire un commentaire...' rel="+hash+" onblur='if(this.value == \"\") { this.value = \"Écrire un commentaire...\"}' onclick='if(this.value == \"Écrire un commentaire...\") { this.value = \"\"}'/></li>";
+																$(feed[hash]).each(function(i, dataf){
+																
+																		$(dataf).each(function(z, datao){
+																			
+																			$(datao).each(function(y, datax){
+																			
+																				for (var d = 0;d<=datax.data.length;d++){
+																					$(datax.data[d]).each(function(z, dataz){
+																						
+																							data.push(dataz);
+																						
+																					});
+																				}
+																			});
+																		});
+																	
+																});
+															} else {
+																data = feed.data;
+															}
+															$(data).each(function(i, elt){
+																
+																if(elt.from){
+																
+																	className = (i%2 == 0)?"odd":"even";
+																	borderClass = (i==0)?" first":(i==(opt.nb-1))?" last":"";
+																	
+																	date = elt.created_time.substr(0,10).split("-");
+																	date = date[2]+"/"+date[1]+"/"+date[0];
+																	
+																	var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i;
+																	
+																	html += "<li class='"+className+borderClass+"'>";
+																	msg = elt.message.replace(exp,"<a href='$1'>$1</a>"); 
+																	var name = "";
+																	if(elt.name){
+																	
+																		if(elt.link){
+																			 name = "<span class='fb_title'><a href="+elt.link+">"+elt.name+"</a></span>";
+																		} else {
+																			name = "<span>"+elt.name+"</span>";
+																		}
+																	}
+																	var properties = "";
+																	if(elt.properties){
+																		 properties += "<ul>";
+																		 $.each(elt.properties, function(y, eltc){
+																		 
+																			if(eltc.name){
+																				properties += "<span>"+eltc.name+" : ";
+																				properties += "<a href="+eltc.href+">"+eltc.text+"</a></span>";
+																			}
+																		 });
+																		 properties += "</ul>";
+																	}
+																	var app ="";
+																	if(elt.application){
+																		app = " - <span>Created via "+ elt.application.name +"</span>";
+																	}
+																	var picture = "";
+																	var imgclass="";
+																	if(elt.picture){
+																		imgclass="img";
+																		picture += "<span class='img'><a href='"+elt.link+"'><img src='"+elt.picture+"' alt='"+elt.message+"' /></a>"
+																		 + "<span class='date'><img src='"+elt.icon+"' alt='"+elt.type+"' title='"+elt.type+"' /> <small>"+date+"</small></span></span>";
+																	}
+																	var comments = "";
+																	if(elt.comments){
+																		 comments = "<div class='comments'><ul>";
+																		 $.each(elt.comments, function(y, eltc){
+																			$.each(eltc, function(y, eltb){
+																				var clikes = "";
+																				if (eltb.likes){
+																					clikes = " - <span class='count'>"+eltb.likes+" personnes</span>";
+																				}
+																				var cd=new Date(eltb.created_time);
+																				cdate = eltb.created_time.substr(0,10).split("-");
+																				cdate = date[2]+"/"+date[1]+"/"+date[0];
+																				comments += "<li><a href='http://www.facebook.com/profile.php?id='"+eltb.from.id+"' style='background:transparent url(http://graph.facebook.com/"+eltb.from.id+"/picture?type=small) no-repeat 0 0;' class='fb_comment_username'>"+eltb.from.name+"</a><p>"+eltb.message+"</p><span class='time'>"+cdate+"</span> - <a href='#' class='like_comment' rel="+eltb.id+">J'aime</a>"+clikes+"</li>";
+																			});
+																			
+																		 });
+																		 comments += "</ul></p></div>";
+																	}
+																	var likes = "";
+																	
+																	
+																	var input = '';
+																	
+																	if (comment_url){
+																		
+																		if (elt.likes){
+																			likes = " - <span class='count'>"+elt.likes+" personnes</span>";
+																		}
+																		
+																	} else {
+																	
+																		var input = "<input class='comment' type='text' value='Écrire un commentaire...' rel="+elt.id+" onblur='if(this.value == \"\") { this.value = \"Écrire un commentaire...\"}' onclick='if(this.value == \"Écrire un commentaire...\") { this.value = \"\"}'/>";
+																		if (elt.likes){
+																			likes = " - <span class='count'>"+elt.likes.count+" personnes</span>";
+																		}
+																	}
+																	
+																	html += "<div class='txt'>"
+																		 + "<a href='http://www.facebook.com/profile.php?id="+elt.from.id+"' class='fb_username' style='background:transparent url(http://graph.facebook.com/"+elt.from.id+"/picture) no-repeat 0 0;'>"+elt.from.name+"</a>"
+																		 + "<p class='fb_message "+imgclass+"' >" +picture +"<span class='msg'>"+name+""+msg+"</span>"+properties+"</p>"
+																		 + "</div>"  
+																		 + "<div class='comment_box'><span>"+date+"</span>"+ app +" - <a href='#' class='like_comment' rel="+elt.id+">J'aime</a>"+likes +""+ comments + input +"</div>" //TODO fix Comment input
+																		 + "</li>";
+																		 
+																}
+															})
+															
+															
+															
+															
+															
+															html += "</ul>";
+															
+															$this.html(html);
+															//FB.XFBML.parse(this);
+															$this.find(".loader").remove();
+															
+															$('.like_comment').bind('click',function(e){
+																e.preventDefault();
+																var rel = $(this).attr('rel');
+																FB.api("/"+rel+"/likes", 'post',function(response) {
+																	if(response === true) {
+																		
+																		$(this).output_log({log: 'like on wall ' +rel });
+																		$('body').trigger('update_wall');
+																	} else {
+																		$(this).output_log({log: 'like error on wall '+rel });
+																	}
+																});
+
+															});
+															
+															$('.comment').bind('keypress', function(e) {
+																	if(e.keyCode==13){
+																			var rel = $(this).attr('rel');
+																			var ref = rel;
+																			var params = {};
+																			var msg = $(this).val();
+																			params['message'] = msg;
+																			
+																			var path = '/comments';
+																			if (comment_url){
+																				path ='comments/';
+																				params['ids'] = rel ;
+																				rel ='';
+																				params['path'] = "comments";
+																				
+																				var post = ' "'+params['message']+'" à propos de '+ params['ids'];
+																				FB.api({
+																					method: 'status.set',
+																					status: post
+																				  },  
+																					function(response) {
+																						 if (response && response.post_id) {
+																							 $(this).facebook_tracking({lid: tracking_prefix +'/comments_on_wall/success/'+response.post_id });
+																						 } else {
+																							 $(this).facebook_tracking({lid: tracking_prefix +'/comments_on_wall/error' });
+																						 }
+																					  }
+																				  );
+																				  
+																				  
+																			}
+																			FB.api("/"+rel+path, 'post',params,function(response) {
+																				 if (!response || response.error) { 
+																					
+																					$(this).output_log({log: 'comment error on wall '+ref + '  /  '+response.error.type + '  /  '+ response.error.message });
+																					$(this).facebook_tracking({lid: tracking_prefix +'/comments/error/  / '+ref  });
+																				 } else {
+																					
+																					$(this).output_log({log: 'comment on wall  '+ref });
+																					 $(this).facebook_tracking({lid: tracking_prefix +'/comments/succes/ '+ref+' / ' +response.post_id });
+																					$('body').trigger('update_wall');
+																				 }
+																			});	
+																	}
+															});	
+															
+															
+															$(this).output_log({log: '/show_wall/loaded/   '+opt.feed });
+															
+														}
+													});
+													
+													
+													if (options.timeout != '0'){
+														var t = setTimeout(getUpdate,opt.timeout);
+													}
+													
+													
+												};
+												
+												$('body').bind('update_wall',  function(){
+													getUpdate();
+												});
+												
+												$('body').trigger('update_wall');
+												
+												
+											} else {
+												
+													
+										
+												$this.html("flux introuvable.");
+												$(this).facebook_tracking({lid: tracking_prefix +'/show_wall/error' });
+												$(this).output_log({log: '/show_wall/notloaded/'+options.feed });
+											}
+											
+										
+								
+									
+							  
+							}
+							
+		};			
+		
+		
+		
+		
+		//Google Analytics Tracking...  
+		$.fn.facebook_tracking = function (options) {
+									if (GA_Account){
+										var defaults = {
+											lid: 'EVENT_TYPE'
+										}; 
+										
+										defaults['api_key'] = api_key;	
+											
+										var trackoptions = $.extend(defaults, options);
+										
+										this.each(function(){
+											
+											_gaq.push(['_trackEvent', 'APP_ID/'+trackoptions['api_key'], trackoptions['lid']]);
+								
+											$(this).output_log({log: 'tracking : _trackEvent  /   APP_ID:'+trackoptions['api_key']+'  /   option: '+trackoptions['lid']});
+										});
+									}
+		};
+		
+		//Debug mode...  
+		$.fn.output_log = function (options) {
+									
+										var defaults = {
+											log: 'LOG'
+										}; 
+										
+										var logoptions = $.extend(defaults, options);
+										
+										this.each(function(){
+										
+											if( (window['console'] !== undefined) ){
+												console.log('log: '+logoptions['log']);
+											}
+										});
+		};
+		
+		
+		
+		
+		// Create a sub instance of jQuery which will contain the new fb methods
+		var fbQuery = $.sub();
+		// target remembers what elements were found by jquery
+		var target;
+		// load default settings from global scope
+		var settings = {};
+		
+		// A factory which return a api method which remembers its options and target
+		function fbFactory(methodId) {
+			// Extend settings with new options
+			//$.extend(settings, defaults[methodId]);
+			var handler = methods[methodId];
+			
+			
+			
+
+			// return the newly fabricated function
+			return function() {
+				// If a event name is passed in the "on" attribute, we bind an event
+				// instead of calling the handler rightaway
+				
+			
+				if (typeof(arguments[0]['on']) !== 'undefined') {
+						
+						if (target['selector'] != ''){
+							var obj = $(target['selector']+'') ;
+							var objs = target['selector']+'';
+						} else {
+							var obj =  $(target);
+							var objs = target;
+						}
+						
+						var obja = arguments;
+						
+						return obj.bind(arguments[0]['on'], function(e) {
+								e.isDefaultPrevented();
+								e.preventDefault();
+								handler.apply(objs, obja);
+						});
+						
+						
+						
+						
+						
+				} else {
+					
+					return handler.apply(target['selector']+'', arguments);
+					
+				}
+			};
+		}
+		// extend the sub instance of jQuery to add fb methods
+		fbQuery.fn.extend({
+			fbinit: fbFactory('fbinit'),
+			showWall: fbFactory('show_wall'),
+			commentsBox: fbFactory('show_wall')
+		});
+			
+		$.fn.fb = function (  ) {	
+			// return the new jQuery instance
+			target = this;
+			
+			var sub = fbQuery(this);
+			return sub;
+		};
+		
+			
+			
+		$(document).ready(function(){
+				
+				//enlever $('#fb-root'). ajouter '#fb-root' automatiquement
+				$('#fb-root').fb().fbinit({
+									api_key: '152367548159504',
+									FB_lang: 'fr_CA', //en_CA is invalid //en_US is valid
+									perms:'publish_stream',
+									access_token_required:'1',
+									GA_Account: 'UA-9999999-8',
+									tracking_prefix:'commentBox_on_example_com',
+									base_url: '/',
+									auto_resize_tab:'1'
+				});
+				
+				// on FB initiated
+				$('body').bind('fbinit', function(){
+						
+						$("#wall").fb().showWall({
+									nb: 25,
+									feed: 'https://graph.facebook.com/106393796069284/feed',
+									loading_message: "Chargement du mur ...",
+									timeout:'25000'
+						});
+								
+								
+						$("#comment_box").fb().commentsBox({
+									nb: 25,
+									feed: 'https://graph.facebook.com/comments/?ids=http://www.example.com&order_by=created_time&since=2011-07-22&',
+									loading_message: "Chargement du mur ...",
+									timeout:'25000'
+						});
+						
+				});
+		});
+
+
+	})(jQuery)
+						
+	</script>	
+    </body>
+</html>					
