@@ -55,16 +55,16 @@ if ( isset( $_REQUEST['login'] ) || isset( $_REQUEST['state'] ) ){
         <meta property="fb:app_id" content="<?= $fbconfig['appId' ] ?>" /> 
         <meta property="og:type" content="fbtutoriel:<?= $object ?>" /> 
         <meta property="og:title" content="<?= $object ?>" /> 
-        <meta property="og:image" content="http://etiennedion.com/hotspots2/images/<?= $object ?>.jpg" /> 
+        <meta property="og:image" content="http://etiennedion.com/easyfacebook/images/<?= $object ?>.jpg" />
         <meta property="og:description" content="Achievement : <?= $object ?>" /> 
-        <meta property="og:url" content="http://etiennedion.com/hotspots2/action.php?object=<?= $object ?>">
+        <meta property="og:url" content="http://etiennedion.com/easyfacebook/action.php?object=<?= $object ?>">
 <?php } else { ?>
 		<!-- META TAG EXAMPLE FOR SHARE AND LIKE ON AN EXTERNAL WEBSITE -->
         <meta property="og:title" content="Easy Facebook Javascript Tools for developers" />
         <meta property="fb:app_id" content="<?= $fbconfig['appId' ] ?>" /> 
         <meta property="og:type" content="fbtutoriel:jsdevtool" /> 
-        <meta property="og:url" content="http://etiennedion.com/hotspots2/index.php" />
-        <meta property="og:image" content="http://etiennedion.com/hotspots2/images/easy.jpg" />
+        <meta property="og:url" content="http://etiennedion.com/easyfacebook/index.php" />
+        <meta property="og:image" content="http://etiennedion.com/easyfacebook/images/easy.jpg" />
         <meta property="og:site_name" content="Easy Facebook Javascript Tools" />
         <meta property="og:description" content="Facebook Javascript Tools for developers" /> 
         <meta property="fb:admins" content="706847059" />
@@ -72,9 +72,9 @@ if ( isset( $_REQUEST['login'] ) || isset( $_REQUEST['state'] ) ){
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"></script>
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />  
-        <link href="css/easyfacebook.css" rel="stylesheet" type="text/css"/>
+        <link href="css/easyfacebook.jquery.css" rel="stylesheet" type="text/css"/>
         <link href="css/autocomplete.css" rel="stylesheet" type="text/css"/>
-		<script src="js/easyfacebook.js" type="text/javascript"></script>
+		<script src="js/easyfacebook.jquery.js" type="text/javascript"></script>
         <script src="js/jquery.jcarousel.min.js" type="text/javascript"></script>
 		<link href="css/jcarrousel.skin.css" rel="stylesheet" type="text/css"/>
    	

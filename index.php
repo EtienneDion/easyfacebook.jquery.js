@@ -15,16 +15,16 @@
     <meta property="fb:app_id" content="<?= $fbconfig['appId' ] ?>" /> 
     <meta property="og:type" content="fbtutoriel:<?= $object ?>" /> 
     <meta property="og:title" content="<?= $object ?>" /> 
-    <meta property="og:image" content="http://etiennedion.com/hotspots2/images/<?= $object ?>.jpg" /> 
+    <meta property="og:image" content="http://etiennedion.com/easyfacebook/images/<?= $object ?>.jpg" />
     <meta property="og:description" content="Achievement : <?= $object ?>" /> 
-    <meta property="og:url" content="http://etiennedion.com/hotspots2/action.php?object=<?= $object ?>">
+    <meta property="og:url" content="http://etiennedion.com/easyfacebook/action.php?object=<?= $object ?>">
 <?php } else { ?>
 	<meta property="fb:app_id" content="<?= $fbconfig['appId' ] ?>" /> 
     <meta property="og:type" content="fbtutoriel:<?= $object ?>" /> 
     <meta property="og:title" content="<?= $object ?>" /> 
-    <meta property="og:image" content="http://etiennedion.com/hotspots2/images/<?= $object ?>.jpg" /> 
+    <meta property="og:image" content="http://etiennedion.com/easyfacebook/images/<?= $object ?>.jpg" />
     <meta property="og:description" content="Achievement : <?= $object ?>" /> 
-    <meta property="og:url" content="http://etiennedion.com/hotspots2/action.php?object=<?= $object ?>">
+    <meta property="og:url" content="http://etiennedion.com/easyfacebook/action.php?object=<?= $object ?>">
 <?php } ?>     
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
 <link href="css/doc.css" rel="stylesheet" type="text/css"/>
@@ -137,8 +137,8 @@
             <h4>Base Easy Facebook : </h4>
             <code style="font-size:10px;" class="prettyprint">&#8249;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"&#8250;&#8249;/script&#8250;
             
-                <br/>&#8249;link href="css/easyfacebook.css" rel="stylesheet" type="text/css"/&#8250;
-                <br/>&#8249;script src="js/easyfacebook.js" type="text/javascript"&#8250;&#8249;/script&#8250;
+                <br/>&#8249;link href="css/easyfacebook.jquery.css" rel="stylesheet" type="text/css"/&#8250;
+                <br/>&#8249;script src="js/easyfacebook.jquery.js" type="text/javascript"&#8250;&#8249;/script&#8250;
                 
         	</code>
             

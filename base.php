@@ -9,8 +9,8 @@
 <title>Outils Facebook Simplifié</title>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-<link href="css/easyfacebook.css" rel="stylesheet" type="text/css"/>
-<script src="js/easyfacebook.js" type="text/javascript"></script>
+<link href="css/easyfacebook.jquery.css" rel="stylesheet" type="text/css"/>
+<script src="js/easyfacebook.jquery.js" type="text/javascript"></script>
 </head>
 
 <body> 

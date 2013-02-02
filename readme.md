@@ -2,7 +2,7 @@
 
   
 
-    * Présentation et pré-requis
+    * Prï¿½sentation et prï¿½-requis
     * Utilisation
     * Fonctions disponibles
   
@@ -10,31 +10,31 @@
 
   
 
-## Présentation et pré-requis
+## Prï¿½sentation et prï¿½-requis
 
 
 
-La création de fan page custom et de site web intéragissant avec la plateforme
-facebook s'avère souvent beaucoup plus complexe qu'initialement prévu. La
-méconnaissance des concepts de base du développement de projet Facebook est à
-l'origine de la plupart des problèmes en cours de production. Cette librairie
-peut être utilisé dans une fan page Facebook ou dans un site web normal. Ce
-projet a été testé pour être compatible avec un DOCTYPE XHTML ou HTML5.
+La crï¿½ation de fan page custom et de site web intï¿½ragissant avec la plateforme
+facebook s'avï¿½re souvent beaucoup plus complexe qu'initialement prï¿½vu. La
+mï¿½connaissance des concepts de base du dï¿½veloppement de projet Facebook est ï¿½
+l'origine de la plupart des problï¿½mes en cours de production. Cette librairie
+peut ï¿½tre utilisï¿½ dans une fan page Facebook ou dans un site web normal. Ce
+projet a ï¿½tï¿½ testï¿½ pour ï¿½tre compatible avec un DOCTYPE XHTML ou HTML5.
 
-### Pré-requis pour l'utilisation du Facebook Starter kit
+### Prï¿½-requis pour l'utilisation du Facebook Starter kit
 
-  * Connaissance minimal en intégration ou en développement de site web
-  * Un service d'hébergement de site web
-  * Une app dans [facebook développers](http://www.facebook.com/developpers)
+  * Connaissance minimal en intï¿½gration ou en dï¿½veloppement de site web
+  * Un service d'hï¿½bergement de site web
+  * Une app dans [facebook dï¿½veloppers](http://www.facebook.com/developpers)
   * [Jquery](http://jquery.com/)
 
-Voici un outil créé pour les développeurs de site web afin de simplifier les
-intérections avec l'Api Facebook. Cette outil centralise toutes les actions
-nécessaire à la connection, gestion de permission, action sur la plateforme
-Facebook, tracking Google analytique et débuggage.
+Voici un outil crï¿½ï¿½ pour les dï¿½veloppeurs de site web afin de simplifier les
+intï¿½rections avec l'Api Facebook. Cette outil centralise toutes les actions
+nï¿½cessaire ï¿½ la connection, gestion de permission, action sur la plateforme
+Facebook, tracking Google analytique et dï¿½buggage.
 
-L'outils simplifie les configurations et script nécessaire au démarrage d'un
-projet facebook tout en n'étant pas limitatif sur les développements plus
+L'outils simplifie les configurations et script nï¿½cessaire au dï¿½marrage d'un
+projet facebook tout en n'ï¿½tant pas limitatif sur les dï¿½veloppements plus
 complexe.
 
 ### Ce projet inclu :
@@ -44,7 +44,7 @@ complexe.
   * Des exemples d'utilisation
   * Outil de Tracking Google Analytics
   * Outil de connection Facebook Connect
-  * Outil de débugging
+  * Outil de dï¿½bugging
   
   
   
@@ -52,94 +52,94 @@ complexe.
 ## Utilisation
 
 
-L'utilisation de cette librairie se veut simplifié et flexible. Les options
-sont totalement paramètrable et des propriétées génériques sont utilisées pour
+L'utilisation de cette librairie se veut simplifiï¿½ et flexible. Les options
+sont totalement paramï¿½trable et des propriï¿½tï¿½es gï¿½nï¿½riques sont utilisï¿½es pour
 limiter les erreurs de script.
 
 ### Ajout css et javascript dans le head
 
 #### Modification du tag HTML :
 
-`‹html xmlns:fb="http://ogp.me/ns/fb#"›`
+`ï¿½html xmlns:fb="http://ogp.me/ns/fb#"ï¿½`
 
 #### Base Easy Facebook :
 
-`‹script type="text/javascript"
-src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"›‹/script›
+`ï¿½script type="text/javascript"
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"ï¿½ï¿½/scriptï¿½
 
-‹link href="css/easyfacebook.css" rel="stylesheet" type="text/css"/›
+ï¿½link href="css/easyfacebook.jquery.css" rel="stylesheet" type="text/css"/ï¿½
 
-‹script src="js/easyfacebook.js" type="text/javascript"›‹/script› `
+ï¿½script src="js/easyfacebook.jquery.js" type="text/javascript"ï¿½ï¿½/scriptï¿½ `
 
-#### À ajouter pour champ Auto-complete :
+#### ï¿½ ajouter pour champ Auto-complete :
 
-`‹script type="text/javascript"
-src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"›‹/script›
+`ï¿½script type="text/javascript"
+src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"ï¿½ï¿½/scriptï¿½
 
-‹link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base
-/jquery-ui.css" rel="stylesheet" type="text/css"/› `
+ï¿½link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base
+/jquery-ui.css" rel="stylesheet" type="text/css"/ï¿½ `
 
-#### À ajouter pour champ Carrousel Photo :
+#### ï¿½ ajouter pour champ Carrousel Photo :
 
-`‹script
+`ï¿½script
 src="http://sorgalla.com/projects/jcarousel/lib/jquery.jcarousel.min.js"
-type="text/javascript"›‹/script›
+type="text/javascript"ï¿½ï¿½/scriptï¿½
 
-‹link href="css/jcarrousel.skin.css" rel="stylesheet" type="text/css"/› `
+ï¿½link href="css/jcarrousel.skin.css" rel="stylesheet" type="text/css"/ï¿½ `
 
-### Ajout de méta tag pour le sharing
+### Ajout de mï¿½ta tag pour le sharing
 
-`‹meta property="og:title" content="Easy Facebook Javascript Tools " /›
+`ï¿½meta property="og:title" content="Easy Facebook Javascript Tools " /ï¿½
 
-‹meta property="og:type" content="article" /›
+ï¿½meta property="og:type" content="article" /ï¿½
 
-‹meta property="og:url" content="http://www.example.ca/" /›
+ï¿½meta property="og:url" content="http://www.example.ca/" /ï¿½
 
-‹meta property="og:image" content="http://www.example.ca/image.jpg" /›
+ï¿½meta property="og:image" content="http://www.example.ca/image.jpg" /ï¿½
 
-‹meta property="og:site_name" content="Easy Facebook Javascript Tools" /›
+ï¿½meta property="og:site_name" content="Easy Facebook Javascript Tools" /ï¿½
 
-‹meta property="fb:admins" content="xxxxxxxxxxx" /› `
+ï¿½meta property="fb:admins" content="xxxxxxxxxxx" /ï¿½ `
 
 ### Ajout du fb-root tag de facebook dans le body
 
-`‹div id="fb-root"›‹/div›`
+`ï¿½div id="fb-root"ï¿½ï¿½/divï¿½`
 
 ### Initialisation
 
-Lors de l'initialisation plusieurs options sont nécessaire. Les options
+Lors de l'initialisation plusieurs options sont nï¿½cessaire. Les options
 obligatoire sont :
 
   * `api_key` ( Facebook App Api Key ),
-  * `FB_lang` ( Langue pour les éléments Facebook //en_CA = invalid //en_US = valid ),
+  * `FB_lang` ( Langue pour les ï¿½lï¿½ments Facebook //en_CA = invalid //en_US = valid ),
   * `base_url` ( Root url de votre code source ).
     
-    ‹script type="text/javascript"›
+    ï¿½script type="text/javascript"ï¿½
     
                     $(document).ready(function(){
                     $('#fb-root').easyfb().fbinit({
                     api_key: 'XXXXXXXXXXX', // obligatoire
                     FB_lang: 'fr_CA', // obligatoire //en_CA est invalide //en_US est valide
-                    base_url: 'XXXXXXXXXXX' //  obligatoire, utilisé pour le sharing et les friends requests
+                    base_url: 'XXXXXXXXXXX' //  obligatoire, utilisï¿½ pour le sharing et les friends requests
                     });
                     })(jQuery)
     
-                    ‹/script›
+                    ï¿½/scriptï¿½
                 
 
 Autres Options d'initiatilisation de la libarie:
 
-  * `perms` : '', // Si des permission sont nécessaire au chargement de la page
+  * `perms` : '', // Si des permission sont nï¿½cessaire au chargement de la page
   * `get_access_token` : '1', // obligatoire pour le chargement du wall of post et pour faire des 'actions' facebook
   * `set_access_token` : 'XYZ123', // optionel pour le chargement du wall of post avec un token fourni par le backend.
-  * `get_user` : '1', // obligatoire pour créer un évenement et pour accéder aux données de l'utilisateur
+  * `get_user` : '1', // obligatoire pour crï¿½er un ï¿½venement et pour accï¿½der aux donnï¿½es de l'utilisateur
   * `get_friends` : '1', // obligatoire pour utiliser la fonction autocomplete et pour obtenir la liste des amis =&gt; var friends = friends; liste des amis dans la variable friends
-  * `GA_Account` : 'UA-9999999-9', // Google analitics sera activé si différent de UA-9999999-9 ou 0
+  * `GA_Account` : 'UA-9999999-9', // Google analitics sera activï¿½ si diffï¿½rent de UA-9999999-9 ou 0
   * `tracking_prefix` : 'demo', // prefix pour Google analitics
-  * `auto_resize_tab` : '1' // utilisé pour redimentionner le iframe dans une fanpage // pour éviter la scroll bar
+  * `auto_resize_tab` : '1' // utilisï¿½ pour redimentionner le iframe dans une fanpage // pour ï¿½viter la scroll bar
 
 Les fonctions disponible dans la librairie sans avoir besoin d'un login
-préalable ou d'acceptation de permission facebook sont:
+prï¿½alable ou d'acceptation de permission facebook sont:
 
   * Bouton J'aime : **$(".like").easyfb().like({ ... });**
   * Bouton Envoyer : **$(".send").easyfb().send({ ... });**
@@ -150,10 +150,10 @@ préalable ou d'acceptation de permission facebook sont:
 
 Voici un [example](base.php) de ces fonctions.
 
-Pour avoir accès automatiquement aux données utilisateur il faut ajouter
-**get_user:'1'** lors de l'initialisation, la variable populé sera 'user'.
-Pour avoir accès à la liste d'amis il faut ajouter **get_friends:'1'**, la
-variable populé sera 'friends'.
+Pour avoir accï¿½s automatiquement aux donnï¿½es utilisateur il faut ajouter
+**get_user:'1'** lors de l'initialisation, la variable populï¿½ sera 'user'.
+Pour avoir accï¿½s ï¿½ la liste d'amis il faut ajouter **get_friends:'1'**, la
+variable populï¿½ sera 'friends'.
 
     
     $('#fb-root').easyfb().fbinit({
@@ -163,10 +163,10 @@ variable populé sera 'friends'.
                     ...
                     });
 
-Pour pouvoir utiliser les valeurs populés dans ces variables il faut attendre
-que la librairie se connecte à facebook et qu'elle valide les permissions. Des
-appels sont lancé lors de l'initialisation de easy facebook pour annoncer les
-evenements. Les évènements 'user' et 'friends' annoncent l'initialiation de
+Pour pouvoir utiliser les valeurs populï¿½s dans ces variables il faut attendre
+que la librairie se connecte ï¿½ facebook et qu'elle valide les permissions. Des
+appels sont lancï¿½ lors de l'initialisation de easy facebook pour annoncer les
+evenements. Les ï¿½vï¿½nements 'user' et 'friends' annoncent l'initialiation de
 ces variables.
 
 Elles sont ensuite utilisable comme ceci:
@@ -187,15 +187,15 @@ Elles sont ensuite utilisable comme ceci:
     });
                     
 
-[Références sur les propriétés disponible pour un user et les permissions
+[Rï¿½fï¿½rences sur les propriï¿½tï¿½s disponible pour un user et les permissions
 correspondantes](https://developers.facebook.com/docs/reference/api/user/)
 
-[Références sur les propriétés disponible pour un
+[Rï¿½fï¿½rences sur les propriï¿½tï¿½s disponible pour un
 ami](https://developers.facebook.com/docs/reference/api/user/)
 
 Pour populer un wall de post ou une liste de commentaire il faut attendre que
-le init facebook soit complêté. Il faut aussi ajouter dans l'initialisation
-**get_access_token:'1'** et attendre l'évènement **access_token**.
+le init facebook soit complï¿½tï¿½. Il faut aussi ajouter dans l'initialisation
+**get_access_token:'1'** et attendre l'ï¿½vï¿½nement **access_token**.
 
     
     $('#fb-root').easyfb().fbinit({
@@ -228,15 +228,15 @@ Voici un example:
   
 
 Toutes les fonctions de la librairie sont accessibles au chargement de la page
-ou sur un évènement (ex: onClick ).
+ou sur un ï¿½vï¿½nement (ex: onClick ).
 
-Une fonction ayant le parammetre **'on: "click"'** sera exécuté seulement lors
-d'un click sur l'élément déclaré. Par défault la fonction sera exécuté au
+Une fonction ayant le parammetre **'on: "click"'** sera exï¿½cutï¿½ seulement lors
+d'un click sur l'ï¿½lï¿½ment dï¿½clarï¿½. Par dï¿½fault la fonction sera exï¿½cutï¿½ au
 chargement de la page. Il faut donc s'assurer d'avoir en main les variables /
-permissions nécessaires avant d'exécuter la fonction. Example: si dans une
+permissions nï¿½cessaires avant d'exï¿½cuter la fonction. Example: si dans une
 fonction on compte utiliser une information utilisateur provenant de la
 variable user. Il faut s'assurer d'avoir attendu que la permission soit
-disponible avant de d'exécuter la fonction.
+disponible avant de d'exï¿½cuter la fonction.
 
   
 Ainsi ceci:
@@ -260,12 +260,12 @@ Ainsi ceci:
                     });
                 
 
-Déclanchera une demande de permission sur le click de les éléments
+Dï¿½clanchera une demande de permission sur le click de les ï¿½lï¿½ments
 ".login_request".
 
-Les fonctions utilisées au chargement de la page doivent préférablement être
-utilisées après l'événement 'fbinit' donc à l'intérieur de l'écouteur
-d'évenement: `$('body').bind('fbinit', function(){ ... });`
+Les fonctions utilisï¿½es au chargement de la page doivent prï¿½fï¿½rablement ï¿½tre
+utilisï¿½es aprï¿½s l'ï¿½vï¿½nement 'fbinit' donc ï¿½ l'intï¿½rieur de l'ï¿½couteur
+d'ï¿½venement: `$('body').bind('fbinit', function(){ ... });`
 
   
   
@@ -289,30 +289,30 @@ d'évenement: `$('body').bind('fbinit', function(){ ... });`
   * Bouton Envoyer : **$(".send").easyfb().send({ ... });**
   * Inviter un ami : **$("#invite_friends").easyfb().inviteFriends({ ... });**
   * Partager : **$("#share").easyfb().share({ ... });**
-  * Ajouter à sa liste d'ami : **$("#add_friend").easyfb().addFriend({ ... });**
+  * Ajouter ï¿½ sa liste d'ami : **$("#add_friend").easyfb().addFriend({ ... });**
   * Is Fan of the page : **$(this).easyfb().isFan({ ... });**
 
-### Fonctions avancées
+### Fonctions avancï¿½es
 
-Fonctions nécessitant l'ajout de **get_access_token:'1'** lors de
+Fonctions nï¿½cessitant l'ajout de **get_access_token:'1'** lors de
 l'initialisation
 
   * Mur de post venant d'une fanpage : **$("#wall").easyfb().showWall({ ... });**
-  * Mur de commentaire à partir d'une url : **$("#comment_box").easyfb().commentsBox({ ... });**
+  * Mur de commentaire ï¿½ partir d'une url : **$("#comment_box").easyfb().commentsBox({ ... });**
 
-Évènement - Fonctions nécessitant la permission **'create_event'**.
+ï¿½vï¿½nement - Fonctions nï¿½cessitant la permission **'create_event'**.
 
-  * Créer un évènement : **$("#create_event").easyfb().createEvent({ ... });**
-  * Participer à un évènement : **$(".attend_event").each(function (){ ... });**
+  * Crï¿½er un ï¿½vï¿½nement : **$("#create_event").easyfb().createEvent({ ... });**
+  * Participer ï¿½ un ï¿½vï¿½nement : **$(".attend_event").each(function (){ ... });**
 
-Fonctions nécessitant la permission **'publish_actions'**.
+Fonctions nï¿½cessitant la permission **'publish_actions'**.
 
   * Action Facebook : **$("#action").easyfb().action({ ... });**
 
-Fonctions nécessitant l'ajout de **jquery-ui** dans le head de la page et
+Fonctions nï¿½cessitant l'ajout de **jquery-ui** dans le head de la page et
 **get_friends:'1'** lors de l'initialisation.
 
-  * Champs autocomplété choix d'ami : **$("#friend_autocomplete").easyfb().friendAutoComplete({ ... });**
+  * Champs autocomplï¿½tï¿½ choix d'ami : **$("#friend_autocomplete").easyfb().friendAutoComplete({ ... });**
   
   
   
@@ -332,18 +332,18 @@ Initialisation de la librairie et de l'application facebook
 #### Attributs:
 
   * `api_key` Obligatoire - ( Facebook App Api Key ),
-  * `FB_lang` Obligatoire - ( Langue pour les éléments Facebook //en_CA = invalid //en_US = valid ),
+  * `FB_lang` Obligatoire - ( Langue pour les ï¿½lï¿½ments Facebook //en_CA = invalid //en_US = valid ),
   * `base_url` Obligatoire - ( Root url de votre code source ).
-  * `perms` : '', // Si des permission sont nécessaire au chargement de la page
+  * `perms` : '', // Si des permission sont nï¿½cessaire au chargement de la page
   * `get_access_token` : '1', // obligatoire pour le chargement du wall of post et pour faire des 'actions' facebook
-  * `set_access_token` : '...', // will set the access token from backend, utilisé pour le chargement du wall of post
-  * `get_user` : '1', // obligatoire pour créer un évenement et pour accéder aux données de l'utilisateur
+  * `set_access_token` : '...', // will set the access token from backend, utilisï¿½ pour le chargement du wall of post
+  * `get_user` : '1', // obligatoire pour crï¿½er un ï¿½venement et pour accï¿½der aux donnï¿½es de l'utilisateur
   * `get_friends` : '1', // obligatoire pour utiliser la fonction autocomplete et pour obtenir la liste des amis =&gt; var friends = friends; liste des amis dans la variable friends
-  * `GA_Account` : 'UA-9999999-9', // Google analitics sera activé si différent de UA-9999999-9 ou 0
+  * `GA_Account` : 'UA-9999999-9', // Google analitics sera activï¿½ si diffï¿½rent de UA-9999999-9 ou 0
   * `tracking_prefix` : 'demo', // prefix pour Google analitics
-  * `auto_resize_tab` : '1' // utilisé pour redimentionner le iframe dans une fanpage // pour éviter la scroll bar
+  * `auto_resize_tab` : '1' // utilisï¿½ pour redimentionner le iframe dans une fanpage // pour ï¿½viter la scroll bar
   
-Références
+Rï¿½fï¿½rences
 
 ### Demande de login : _$('#login_request').easyfb().login({ ... });_
 
@@ -355,18 +355,18 @@ permissions
 #### Attributs:
 
   * `on` - event(ex: 'click') on which the function is triggered base on the element in selector , if params is not present the function will be triggered on loading
-  * `get_access_token` - will get the access token if this is equal to true, utilisé pour le chargement du wall of post et pour faire des 'actions' facebook
-  * `set_access_token` - will set the access token from backend, utilisé pour le chargement du wall of post et pour faire des 'actions' facebook
-  * `get_user` - obligatoire pour créer un évenement et pour accéder aux données de l'utilisateur =&gt; crée une variable user qui contiens les données de l'utilisateur
-  * `get_friends` - obligatoire pour utiliser la fonction autocomplete et pour obtenir la liste des amis =&gt; crée une variable user qui contiens les données de l'utilisateur
-  * `perms` - liste des permissions (scope) demandé par l'apps
-  * `success` - fonction à exécuter lorsque le login est un succès =&gt; function(){ ... }
+  * `get_access_token` - will get the access token if this is equal to true, utilisï¿½ pour le chargement du wall of post et pour faire des 'actions' facebook
+  * `set_access_token` - will set the access token from backend, utilisï¿½ pour le chargement du wall of post et pour faire des 'actions' facebook
+  * `get_user` - obligatoire pour crï¿½er un ï¿½venement et pour accï¿½der aux donnï¿½es de l'utilisateur =&gt; crï¿½e une variable user qui contiens les donnï¿½es de l'utilisateur
+  * `get_friends` - obligatoire pour utiliser la fonction autocomplete et pour obtenir la liste des amis =&gt; crï¿½e une variable user qui contiens les donnï¿½es de l'utilisateur
+  * `perms` - liste des permissions (scope) demandï¿½ par l'apps
+  * `success` - fonction ï¿½ exï¿½cuter lorsque le login est un succï¿½s =&gt; function(){ ... }
 
 ## Fonctions de base
 
 ### Bouton J'aime _$(".like").easyfb().like({ ... });_
 
-Génère un tag ‹fb:like›‹/fb:like›
+Gï¿½nï¿½re un tag ï¿½fb:likeï¿½ï¿½/fb:likeï¿½
 
 #### Attributs:
 
@@ -386,11 +386,11 @@ Génère un tag ‹fb:like›‹/fb:like›
     * `fb_ref` - the ref parameter 
     * `fb_source` - the stream type ('home', 'profile', 'search', 'other') in which the click occurred and the story type ('oneline' or 'multiline'), concatenated with an underscore.
   
-[Références](https://developers.facebook.com/docs/reference/plugins/like/)
+[Rï¿½fï¿½rences](https://developers.facebook.com/docs/reference/plugins/like/)
 
 ### Bouton Envoyer : _$(".send").easyfb().send({ ... });_
 
-Génère un tag ‹fb:send›‹/fb:send›
+Gï¿½nï¿½re un tag ï¿½fb:sendï¿½ï¿½/fb:sendï¿½
 
 #### Attributs:
 
@@ -402,7 +402,7 @@ Génère un tag ‹fb:send›‹/fb:send›
     * `fb_ref` - the ref parameter 
     * `fb_source` - the story type ('message', 'group', 'email') in which the click occurred.
   
-[Références](http://developers.facebook.com/docs/reference/plugins/send/)
+[Rï¿½fï¿½rences](http://developers.facebook.com/docs/reference/plugins/send/)
 
 ### Inviter un ami : _$("#invite_friends").easyfb().inviteFriends({ ... });_
 
@@ -424,7 +424,7 @@ selector.
 
   * `max_recipients` - Optional, An integer that specifies the maximum number of friends that can be chosen by the user in the friend selector. 
   
-[Références](https://developers.facebook.com/docs/reference/dialogs/requests/)
+[Rï¿½fï¿½rences](https://developers.facebook.com/docs/reference/dialogs/requests/)
 
 ### Partager : _$("#share").easyfb().share({ ... });_
 
@@ -448,57 +448,57 @@ Dialogues d'invitation de plusieurs amis utilisant
   * `actions` - A JSON array of action links which will appear next to the "Comment" and "Like" link under posts. Each action link should be represented as a JSON object with keys name and link.
   * `ref` - A text reference for the category of feed post. This category is used in Facebook Insights to help you measure the performance of different types of post
   
-[Références](https://developers.facebook.com/docs/reference/dialogs/feed/)
+[Rï¿½fï¿½rences](https://developers.facebook.com/docs/reference/dialogs/feed/)
 
-### Ajouter à sa liste d'ami : _$("#add_friend").easyfb().addFriend({ ... });_
+### Ajouter ï¿½ sa liste d'ami : _$("#add_friend").easyfb().addFriend({ ... });_
 
-Dialogues d'ajout à sa liste d'amis utilisant
+Dialogues d'ajout ï¿½ sa liste d'amis utilisant
 [FB.ui](https://developers.facebook.com/docs/reference/javascript/FB.ui/)
-(envoi une demande d'amitié)
+(envoi une demande d'amitiï¿½)
 
 #### Attributs:
 
   * `on` - event(ex: 'click') on which the function is triggered base on the element in selector , if params is not present the function will be triggered on loading
   * `redirect_uri` - The URL to redirect to after the user clicks a button on the dialog. Required, but automatically specified by most SDKs.
   
-[Références](https://developers.facebook.com/docs/reference/dialogs/friends/)
+[Rï¿½fï¿½rences](https://developers.facebook.com/docs/reference/dialogs/friends/)
 
 ### Is Fan of the page : _$(this).easyfb().isFan({ ... });_
 
-Requête utilisant
+Requï¿½te utilisant
 [FB.api](https://developers.facebook.com/docs/reference/javascript/FB.api/)
-pour vérifier si l'utilisateur like une page facebook.
+pour vï¿½rifier si l'utilisateur like une page facebook.
 
 #### Attributs:
 
   * `on` - event(ex: 'click') on which the function is triggered base on the element in selector , if params is not present the function will be triggered on loading
-  * `page_id` Obligatoire - id de la page à tester
-  * `success` - Optionel - fonction exécuté si la personne est fan. Ex: function(){ ... })
-  * `fail` - Optionel - fonction exécuté si la personne n'est pas fan. Ex: function(){ ... })
+  * `page_id` Obligatoire - id de la page ï¿½ tester
+  * `success` - Optionel - fonction exï¿½cutï¿½ si la personne est fan. Ex: function(){ ... })
+  * `fail` - Optionel - fonction exï¿½cutï¿½ si la personne n'est pas fan. Ex: function(){ ... })
 
-## Fonctions avancées
+## Fonctions avancï¿½es
 
   
 
-### Fonctions nécessitant l'ajout de _get_access_token:'1'_ lors de
+### Fonctions nï¿½cessitant l'ajout de _get_access_token:'1'_ lors de
 l'initialisation
 
 ### Mur de post venant d'une fanpage : _$("#wall").easyfb().showWall({ ...
 });_
 
-Requête utilisant
+Requï¿½te utilisant
 [FB.api](https://developers.facebook.com/docs/reference/javascript/FB.api/)
 pour populer un wall de post d'une page facebook. 'get_access_token' dans la
 fonction init est requis pour utiliser cette fonction, optionellement
-'set_access_token' peut fournir un token à partir du backend. Cette fonction
+'set_access_token' peut fournir un token ï¿½ partir du backend. Cette fonction
 permet de pouvoir skinner totalement le wall par css.
 
 #### Attributs:
 
-  * `nb` Obligatoire - nombre de post à afficher
+  * `nb` Obligatoire - nombre de post ï¿½ afficher
   * `feed` Obligatoire - url d'un feed sur https://graph.facebook.com/... id de la page .../feed 
   * `loading_message` Message pendant le chargement 
-  * `timeout` Timeout en tick - par défault : 25000 
+  * `timeout` Timeout en tick - par dï¿½fault : 25000 
   
 [Graph Explorer](https://developers.facebook.com/tools/explorer/?method=GET&amp;pa
 th=706847059)
@@ -508,7 +508,7 @@ References](https://developers.facebook.com/docs/reference/api/page/)
 
 ### Mur de commentaire : _$("#wall").easyfb().commentsBox({ ... });_
 
-Requête utilisant
+Requï¿½te utilisant
 [FB.api](https://developers.facebook.com/docs/reference/javascript/FB.api/)
 pour populer un wall de post d'une page facebook. 'get_access_token' dans la
 fonction init est requis pour utiliser cette fonction. Cette fonction permet
@@ -516,10 +516,10 @@ de pouvoir skinner totalement le wall par css.
 
 #### Attributs:
 
-  * `nb` Obligatoire - nombre de post à afficher
+  * `nb` Obligatoire - nombre de post ï¿½ afficher
   * `feed` Obligatoire - url d'un feed de commentaire sur https://graph.facebook.com/comments/?ids=**http://www.example.como_by=created_time&amp;since;=2011-07-22&amp; **
   * `loading_message` Message pendant le chargement 
-  * `timeout` Timeout en tick - par défault : 25000 
+  * `timeout` Timeout en tick - par dï¿½fault : 25000 
   
 [Graph Explorer](https://developers.facebook.com/tools/explorer/?method=GET&amp;pa
 th=706847059)
@@ -527,82 +527,82 @@ th=706847059)
 [Api graph Page Feed
 References](https://developers.facebook.com/docs/reference/api/page/)
 
-### Évènement - Fonctions nécessitant la permission _'create_event'_.
+### ï¿½vï¿½nement - Fonctions nï¿½cessitant la permission _'create_event'_.
 
   
 
-### Créer un évènement : _$("#create_event").easyfb().createEvent({ ... });_
+### Crï¿½er un ï¿½vï¿½nement : _$("#create_event").easyfb().createEvent({ ... });_
 
-Requête utilisant
+Requï¿½te utilisant
 [FB.api](https://developers.facebook.com/docs/reference/javascript/FB.api/)
-pour créer un évènement sur votre profil facebook.
+pour crï¿½er un ï¿½vï¿½nement sur votre profil facebook.
 
 #### Attributs:
 
   * `on` - event(ex: 'click') on which the function is triggered base on the element in selector , if params is not present the function will be triggered on loading
-  * `name` Obligatoire - nom de l'évènement
-  * `location` Obligatoire - ville ou emplacement de l'évènement
-  * `description` Obligatoire - Description de l'évènement 
-  * `start_time` Obligatoire - Moment du début de l'activité en temps ISO-8601 ou UNIX timestamp
-  * `end_time` Optionel - Moment du fin de l'activité en temps ISO-8601 ou UNIX timestamp
+  * `name` Obligatoire - nom de l'ï¿½vï¿½nement
+  * `location` Obligatoire - ville ou emplacement de l'ï¿½vï¿½nement
+  * `description` Obligatoire - Description de l'ï¿½vï¿½nement 
+  * `start_time` Obligatoire - Moment du dï¿½but de l'activitï¿½ en temps ISO-8601 ou UNIX timestamp
+  * `end_time` Optionel - Moment du fin de l'activitï¿½ en temps ISO-8601 ou UNIX timestamp
   * `privacy` Optionel - containing 'OPEN'( par default ), 'CLOSED', or 'SECRET' 
   
 Plus d'option [ici](http://developers.facebook.com/docs/reference/api/event/)
 
   
 
-### Participer à un évènement : _$(".attend_event").each(function (){ ... });_
+### Participer ï¿½ un ï¿½vï¿½nement : _$(".attend_event").each(function (){ ... });_
 
-Requête utilisant
+Requï¿½te utilisant
 [FB.api](https://developers.facebook.com/docs/reference/javascript/FB.api/)
-pour s'inscrire à un évènement sur votre profil facebook.
+pour s'inscrire ï¿½ un ï¿½vï¿½nement sur votre profil facebook.
 
 #### Attributs:
 
   * `on` - event(ex: 'click') on which the function is triggered base on the element in selector , if params is not present the function will be triggered on loading
-  * `id` Obligatoire - id de l'évènement facebook
+  * `id` Obligatoire - id de l'ï¿½vï¿½nement facebook
 
-### Fonctions nécessitant la permission 'publish_actions'.
+### Fonctions nï¿½cessitant la permission 'publish_actions'.
 
   
 
 ### Action Facebook : _$("#action").easyfb().action({ ... });_
 
-Requête utilisant
+Requï¿½te utilisant
 [FB.api](https://developers.facebook.com/docs/reference/javascript/FB.api/)
 pour faire des [actions
 facebook](https://developers.facebook.com/docs/beta/opengraph/) en utlisant le
 [nouveau timeline](https://blog.facebook.com/blog.php?post=10150408488962131).
-Nécessite d'avoir préabalement [créé des actions dans votre
+Nï¿½cessite d'avoir prï¿½abalement [crï¿½ï¿½ des actions dans votre
 app](https://developers.facebook.com/docs/beta/opengraph/tutorial/). Une
 action utilise des
 [objets](https://developers.facebook.com/docs/beta/opengraph/define-objects/),
 des [actions](https://developers.facebook.com/docs/beta/opengraph/define-
 actions/) et s'affiche avec des
-[agrégations](https://developers.facebook.com/docs/beta/opengraph/define-
-units/). Pour utiliser les actions avec cette librairie il est nécessaire
+[agrï¿½gations](https://developers.facebook.com/docs/beta/opengraph/define-
+units/). Pour utiliser les actions avec cette librairie il est nï¿½cessaire
 d'ajouter les meta tag particulier dans le head pour une page objet pour que
 cela fonctionne.
 
   
 Ex:
 
-` ‹meta property="fb:app_id" content="APP_ID" /›
+` ï¿½meta property="fb:app_id" content="APP_ID" /ï¿½
 
-‹meta property="og:type" content="NAMESPACE:OBJET" /›
+ï¿½meta property="og:type" content="NAMESPACE:OBJET" /ï¿½
 
-‹meta property="og:title" content="TITRE DE L'OBJET" /›
+ï¿½meta property="og:title" content="TITRE DE L'OBJET" /ï¿½
 
-‹meta property="og:image" content="URL D'IMAGE" /›
+ï¿½meta property="og:image" content="URL D'IMAGE" /ï¿½
 
-‹meta property="og:description" content="DESCRIPTION" /›
+ï¿½meta property="og:description" content="DESCRIPTION" /ï¿½
 
-‹meta property="og:url" content="URL DE L'OBJET EX:action.php?object=‹?=
-$OBJET ?›"› `
+ï¿½meta property="og:url" content="URL DE L'OBJET EX:action.php?object=ï¿½?=
+$OBJET ?ï¿½"ï¿½ `
 
   
-Une fois les actions, objets, agrégations et page objet créé cette fonction
-simplifiera le processus d'exécution des actions sur facebook.
+Une fois les actions, objets, agrï¿½gations et page objet crï¿½ï¿½ cette fonction
+simplifiera le processus d'exï¿½cution des actions sur facebook.
 
 #### Attributs:
 
@@ -612,37 +612,37 @@ simplifiera le processus d'exécution des actions sur facebook.
   * `object` Obligatoire - le nom de votre objet (Object Type Name)
   * `object_url` Obligatoire - l'url de votre page objet
   
-[Référence sur les objets facebook](https://developers.facebook.com/docs/beta/
+[Rï¿½fï¿½rence sur les objets facebook](https://developers.facebook.com/docs/beta/
 opengraph/objects/builtin/)
 
 [Object url debugger](https://developers.facebook.com/tools/debug)
 
   
 
-### Champs autocomplété choix d'ami :
+### Champs autocomplï¿½tï¿½ choix d'ami :
 _$("#friend_autocomplete").easyfb().friendAutoComplete({ ... });_
 
-Fonctions nécessitant l'ajout de **jquery-ui** dans le head de la page et
+Fonctions nï¿½cessitant l'ajout de **jquery-ui** dans le head de la page et
 **get_friends:'1'** lors de l'initialisation.
 
-Cette fonction crée un champs autocomplété avec la liste des amis por facilité
-le choix d'un ami pour la soumission dans un formulaire. La fonction génère
+Cette fonction crï¿½e un champs autocomplï¿½tï¿½ avec la liste des amis por facilitï¿½
+le choix d'un ami pour la soumission dans un formulaire. La fonction gï¿½nï¿½re
 deux champ input: l'un pour le nom de l'ami et l'autre pour le id facebook de
-cet ami. Le 'name' et 'id' des champs inputs sont paramétrable dans les
-options de la fonction. Nécessite l'ajout de ces tag dans le head de la page:
+cet ami. Le 'name' et 'id' des champs inputs sont paramï¿½trable dans les
+options de la fonction. Nï¿½cessite l'ajout de ces tag dans le head de la page:
 
   
-`‹script type="text/javascript"
-src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"›‹
-/script›
+`ï¿½script type="text/javascript"
+src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"ï¿½ï¿½
+/scriptï¿½
 
-‹link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base
-/jquery-ui.css" rel="stylesheet" type="text/css"/› `
+ï¿½link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base
+/jquery-ui.css" rel="stylesheet" type="text/css"/ï¿½ `
 
 #### Attributs:
 
-  * `input_name` Obligatoire - nom de l'input généré pour le nom de l'ami selectionné
-  * `input_facebook_id` Obligatoire - nom de l'input généré pour l'id facebook de l'ami selectionné
+  * `input_name` Obligatoire - nom de l'input gï¿½nï¿½rï¿½ pour le nom de l'ami selectionnï¿½
+  * `input_facebook_id` Obligatoire - nom de l'input gï¿½nï¿½rï¿½ pour l'id facebook de l'ami selectionnï¿½
 
 [Etienne Dion (C) 2011](http://etiennedion.com)
 

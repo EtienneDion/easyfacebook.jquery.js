@@ -9,7 +9,7 @@ $object = $_GET["object"];
     <meta property="og:title" content="<?= $object ?>" /> 
     <meta property="og:image" content="http://etiennedion.com/hotspots2/images/<?= $object ?>.jpg" /> 
     <meta property="og:description" content="Achievement : <?= $object ?>" /> 
-    <meta property="og:url" content="http://etiennedion.com/hotspots2/action.php?object=<?= $object ?>"> 
+    <meta property="og:url" content="http://etiennedion.com/easyfacebook/action.php?object=<?= $object ?>">
 
 </head> 
 
@@ -32,7 +32,7 @@ $object = $_GET["object"];
             </font> 
         </h3> 
         <p>
-            <img title="<?= $object ?>"  src="http://etiennedion.com/hotspots2/images/<?= $object ?>.jpg" width="550"/><br />
+            <img title="<?= $object ?>"  src="http://etiennedion.com/easyfacebook/images/<?= $object ?>.jpg" width="550"/><br />
         </p> 
         
         <fb:activity actions="fbtutoriel:own"></fb:activity>   

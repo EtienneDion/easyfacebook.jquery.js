@@ -231,8 +231,8 @@ $str = get_url_contents("https://graph.facebook.com/oauth/access_token?grant_typ
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"></script>
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>  
-        <link href="css/easyfacebook.css" rel="stylesheet" type="text/css"/>
-		<script src="js/easyfacebook.js" type="text/javascript"></script>
+        <link href="css/easyfacebook.jquery.css" rel="stylesheet" type="text/css"/>
+		<script src="js/easyfacebook.jquery.js" type="text/javascript"></script>
         <script src="http://sorgalla.com/projects/jcarousel/lib/jquery.jcarousel.min.js" type="text/javascript"></script>
 		<link href="css/jcarrousel.skin.css" rel="stylesheet" type="text/css"/>
    	

@@ -2,7 +2,7 @@
 
 	//CONFIG
 	$fbconfig['facebookSdkPath'] ="src/";
-	$fbconfig['baseUrl']  = "http://www.etiennedion.com/hotspots2/";
+	$fbconfig['baseUrl']  = "http://www.etiennedion.com/easyfacebook/";
 	$fbconfig['appBaseUrl'] =  "http://apps.facebook.com/fbtutoriel/";   
 	
     $fbconfig['appId']  = '152367548159504';
