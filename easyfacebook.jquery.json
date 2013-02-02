@@ -13,11 +13,7 @@
         "name": "Etienne Dion",
         "url": "http://www.etiennedion.com"
     },
-    "demo": [
-        {
-            "url": "http://etiennedion.com/easyfacebook/"
-        }
-    ],
+    "demo": "http://etiennedion.com/easyfacebook/",
     "maintainers": [
         {
             "name": "Etienne Dion",
