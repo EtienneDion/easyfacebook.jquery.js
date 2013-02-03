@@ -1,6 +1,6 @@
 {
   "name": "easyfacebook.jquery.js",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": ["./dist/easyfacebook.jquery.css", "./dist/easyfacebook.jquery.js"],
   "dependencies": {
     "jquery": ">=1.5"
@@ -18,14 +18,22 @@
     "tests/",
     "components/",
     "*.php",
-    "*.html",
-    "*.md",	
+    "*.html",	
     "*.txt",
     "**.php",
-    "**.html",
-    "**.md",	
+    "**.html",	
     "**.txt",
     "*.gitignore",
-    "*.gitattributes"
+    "*.gitattributes",
+    ".gitignore",
+    ".gitattributes",
+    "action.php",
+    "base.php",
+    "channel.html",
+    "configs.php",
+    "exemples.php",
+    "index.php",
+    "LICENSE-MIT.txt",
+    "php.php"
   ]
 } 
