@@ -21,8 +21,7 @@
     "**/*.html",
     "**.php",
     "**.html",
-    "**.md",
-    "**.json",	
+    "**.md",	
     "**.txt",
     ".gitignore",
     ".gitattributes"
