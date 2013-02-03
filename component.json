@@ -1,0 +1,28 @@
+{
+  "name": "easyfacebook.jquery.js",
+  "version": "0.0.3",
+  "main": ["./dist/easyfacebook.jquery.css", "./dist/easyfacebook.jquery.js"],
+  "dependencies": {
+    "jquery": ">=1.5"
+  },
+  "ignore": [
+    "examples/",
+    "_notes/",
+    ".git/",
+    "css/",
+    "js/",
+    "images/",
+    "old/",
+    "src/",
+    "tests/",
+    "components/",
+    "**/*.php",
+    "**/*.html",
+    "*.php",
+    "*.html"
+    "*.md",
+    "*.json"	
+    "*.txt"
+  ]
+ 
+} 
