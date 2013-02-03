@@ -9,6 +9,7 @@
     "examples/",
     "_notes/",
     ".git/",
+    ".idea/"
     "css/",
     "js/",
     "images/",
@@ -18,11 +19,14 @@
     "components/",
     "**/*.php",
     "**/*.html",
-    "*.php",
-    "*.html",
-    "*.md",
-    "*.json",	
-    "*.txt"
+    "**.php",
+    "**.html",
+    "**.md",
+    "**.json",	
+    "**.txt",
+    ".gitignore",
+    ".gitattributes"
+
   ]
  
 } 
