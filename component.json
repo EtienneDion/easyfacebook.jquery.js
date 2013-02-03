@@ -1,6 +1,6 @@
 {
   "name": "easyfacebook.jquery.js",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": ["./dist/easyfacebook.jquery.css", "./dist/easyfacebook.jquery.js"],
   "dependencies": {
     "jquery": ">=1.5"
@@ -9,7 +9,7 @@
     "examples/",
     "_notes/",
     ".git/",
-    ".idea/"
+    ".idea/",
     "css/",
     "js/",
     "images/",
@@ -21,6 +21,10 @@
     "*.html",
     "*.md",	
     "*.txt",
+    "**.php",
+    "**.html",
+    "**.md",	
+    "**.txt",
     "*.gitignore",
     "*.gitattributes"
   ]
