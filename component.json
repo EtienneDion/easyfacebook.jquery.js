@@ -1,6 +1,6 @@
 {
   "name": "easyfacebook.jquery.js",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "main": ["./dist/easyfacebook.jquery.css", "./dist/easyfacebook.jquery.js"],
   "dependencies": {
     "jquery": ">=1.5"
