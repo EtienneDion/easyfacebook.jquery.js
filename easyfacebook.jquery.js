@@ -1,5 +1,5 @@
 /*
-* EasyFacebook Javascript Tools v0.1
+* EasyFacebook Javascript Tools v0.0.10
 * Copyright (c) 2011 Etienne Dion
 */
 
