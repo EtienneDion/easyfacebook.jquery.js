@@ -1,6 +1,6 @@
 {
-    "name": "easyfacebook.jquery.js",
-    "title": "Jquery EasyFacebook",
+    "name": "easyfacebook",
+    "title": "easyfacebook.jquery.js",
     "description": "Facebook javascript developement starter kit",
     "keywords": [
         "facebook",
@@ -8,7 +8,7 @@
         "graph",
         "fql"
     ],
-    "version": "0.0.10",
+    "version": "0.0.11",
     "author": {
         "name": "Etienne Dion",
         "url": "http://www.etiennedion.com"
