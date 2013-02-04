@@ -8,7 +8,7 @@
         "graph",
         "fql"
     ],
-    "version": "0.0.11",
+    "version": "0.0.12",
     "author": {
         "name": "Etienne Dion",
         "url": "http://www.etiennedion.com"
@@ -30,7 +30,7 @@
     "bugs": "https://github.com/EtienneDion/easyfacebook.jquery.js/issues",
     "homepage": "https://github.com/EtienneDion/easyfacebook.jquery.js",
     "docs": "https://github.com/EtienneDion/easyfacebook.jquery.js",
-    "download": "https://github.com/EtienneDion/easyfacebook.jquery.js",
+    "download": "https://raw.github.com/EtienneDion/easyfacebook.jquery.js/master/easyfacebook.jquery.js-0.0.12.zip",
     "dependencies": {
         "jquery": ">=1.5"
     }
