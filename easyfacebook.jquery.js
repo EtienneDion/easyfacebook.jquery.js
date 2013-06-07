@@ -16,7 +16,7 @@
 				var access_token;
 				var debug = false;
 				var base_url = base_url || document.location.href;
-				
+				var GA_Account =0;
 				
 				easyfb_defaults['InitSettings'] = {
 										 api_key: '0',
