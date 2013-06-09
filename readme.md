@@ -174,11 +174,11 @@ ces variables.
 Elles sont ensuite utilisable comme ceci:
 
     
-    $('body').bind('user', function(){ console.log(  user.name +','+ user.id  ); });  
+    $('body').bind('user', function(event, user){ console.log(  user.name +','+ user.id  ); });  
     
                 ou   
       
-    $('body').bind('friends', function(){
+    $('body').bind('friends', function(event, friends){
                           
       $.each(friends, function(key, value) {
                           
