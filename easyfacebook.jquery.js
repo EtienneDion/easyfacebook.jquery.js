@@ -1011,7 +1011,7 @@
 
                     if (facebook_user_data_options['get_user'] === '1' || facebook_user_data_options['get_user'] === true){
                         user = u;
-                        $('body').trigger('user');
+                        $('body').trigger('user', user);
 
                         $(this).output_log({log: 'user initiated'});
                     }
@@ -1022,7 +1022,7 @@
                         FB.api('/me/friends', function(result) {
                             friends = result.data;
 
-                            $('body').trigger('friends');
+                            $('body').trigger('friends', friends);
                             $(this).output_log({log: 'friends list collected'});
 
                         });
@@ -1064,7 +1064,7 @@
                 $(this).output_log({log: 'user is logged in and granted some permissions.'});
 
                 $(this).output_log({log: 'access_token obtained'});
-                $('body').trigger('access_token');
+                $('body').trigger('access_token', access_token);
             }
 
         }
@@ -1080,7 +1080,7 @@
                         access_token = loginoptions['set_access_token'];
 
                         $(this).output_log({log: 'access_token set'});
-                        $('body').trigger('access_token');
+                        $('body').trigger('access_token', access_token);
 
                     } else{
                         get_access_token(response);
@@ -1110,7 +1110,7 @@
                                 access_token = loginoptions['set_access_token'];
 
                                 $(this).output_log({log: 'access_token set'});
-                                $('body').trigger('access_token');
+                                $('body').trigger('access_token', access_token);
 
                             } else{
                                 get_access_token(response);
