@@ -54,7 +54,7 @@
     easyfb_defaults['InviteFriendsSettings'] = {
         message: 'Test invite message',
         data: 'tracking information for the user',
-        title: '',
+        title: ''
     };
 
     easyfb_defaults['AddFriendSettings'] = {
@@ -108,7 +108,7 @@
         start_time:date
     };
     easyfb_defaults['AttendEventSettings'] = {
-        id:'1234',
+        id:'1234'
     };
 
     easyfb_defaults['LikeSettings'] = {
