@@ -130,7 +130,7 @@ obligatoire sont :
 Autres Options d'initiatilisation de la libarie:
 
   * `perms` : '', // Si des permission sont nécessaire au chargement de la page
-  * `get_access_token` : '1', // obligatoire pour le chargement du wall of post et pour faire des 'actions' facebook
+  * `get_access_token` : '1', // obligatoire pour le chargement du wall of post et pour faire des 'actions' facebook 
   * `set_access_token` : 'XYZ123', // optionel pour le chargement du wall of post avec un token fourni par le backend.
   * `get_user` : '1', // obligatoire pour créer un évenement et pour accéder aux données de l'utilisateur
   * `get_friends` : '1', // obligatoire pour utiliser la fonction autocomplete et pour obtenir la liste des amis =&gt; var friends = friends; liste des amis dans la variable 
@@ -209,7 +209,7 @@ le init facebook soit complêté. Il faut aussi ajouter dans l'initialisation
 Voici un example:
 
     
-    $('body').bind('access_token', function(){
+    $('body').bind('access_token', function(event, access_token){
     
                     $("#wall").easyfb().showWall({
                     nb: 25,
@@ -337,10 +337,10 @@ Initialisation de la librairie et de l'application facebook
   * `FB_lang` Obligatoire - ( Langue pour les éléments Facebook //en_CA = invalid //en_US = valid ),
   * `base_url` Obligatoire - ( Root url de votre code source ).
   * `perms` : '', // Si des permission sont nécessaire au chargement de la page
-  * `get_access_token` : '1', // obligatoire pour le chargement du wall of post et pour faire des 'actions' facebook
+  * `get_access_token` : '1', // obligatoire pour le chargement du wall of post et pour faire des 'actions' facebook, access_token var will be passed in the 'access_token' event 
   * `set_access_token` : '...', // will set the access token from backend, utilisé pour le chargement du wall of post
-  * `get_user` : '1', // obligatoire pour créer un évenement et pour accéder aux données de l'utilisateur
-  * `get_friends` : '1', // obligatoire pour utiliser la fonction autocomplete et pour obtenir la liste des amis =&gt; var friends = friends; liste des amis dans la variable 
+  * `get_user` : '1', // obligatoire pour créer un évenement et pour accéder aux données de l'utilisateur, user var will be passed in the 'user' event 
+  * `get_friends` : '1', // obligatoire pour utiliser la fonction autocomplete et pour obtenir la liste des amis =&gt; var friends = friends; liste des amis dans la variable, friends var will be passed in the 'friends' event  
 
 friends
   * `GA_Account` : 'UA-9999999-9', // Google analitics sera activé si différent de UA-9999999-9 ou 0
