@@ -8,7 +8,11 @@
         "graph",
         "fql"
     ],
+<<<<<<< HEAD
     "version": "0.0.13",
+=======
+    "version": "0.0.14",
+>>>>>>> fixs
     "author": {
         "name": "Etienne Dion",
         "url": "http://www.etiennedion.com"

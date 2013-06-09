@@ -1,6 +1,10 @@
 {
   "name": "easyfacebook.jquery.js",
+<<<<<<< HEAD
   "version": "0.0.13",
+=======
+  "version": "0.0.14",
+>>>>>>> fixs
   "main": ["easyfacebook.jquery.css", "easyfacebook.jquery.js"],
   "dependencies": {
     "jquery": ">=1.5"
