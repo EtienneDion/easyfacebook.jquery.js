@@ -5,9 +5,9 @@
 	$fbconfig['baseUrl']  = "http://www.etiennedion.com/easyfacebook/";
 	$fbconfig['appBaseUrl'] =  "http://apps.facebook.com/fbtutoriel/";   
 	
-    $fbconfig['appId']  = '152367548159504';
-    $fbconfig['api']  = '3b9a7f95e964376c4f8c797151a1f51f';
-    $fbconfig['secret']  = '6d329d241f5a4aed049462705d712e31';
+    $fbconfig['appId']  = 'xxx';
+    $fbconfig['api']  = 'xxx';
+    $fbconfig['secret']  = 'xxx';
 	$fbconfig['token'] = '0';	
 	
 
